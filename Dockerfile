@@ -8,6 +8,6 @@
 #
 #############################
 FROM debian:trixie-slim
-RUN apk add --no-cache htop \
+RUN apt install htop \
  && rm -rf /var/cache/apk/*
 ENTRYPOINT ["htop"]
