@@ -1,8 +1,13 @@
-FROM docker.io/library/alpine:3.21.2
-
-LABEL maintainer="Aaron Silber <aaron@bytes.co>"
-
-RUN set -eux; \
-    apk add --no-cache htop;
-
+#############################
+#
+#    Dockerfile
+#      Dockerfile for alpine-htop container - htop display for docker host.
+#
+#    Example "run htop inside a container" from the docker run reference at
+#        https://docs.docker.com/engine/reference/run/#example-run-htop-inside-a-container
+#
+#############################
+FROM alpine:latest
+RUN apk add --no-cache htop \
+ && rm -rf /var/cache/apk/*
 ENTRYPOINT ["htop"]
