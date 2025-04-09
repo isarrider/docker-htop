@@ -7,7 +7,7 @@
 #        https://docs.docker.com/engine/reference/run/#example-run-htop-inside-a-container
 #
 #############################
-FROM alpine:latest
+FROM debian:trixie-slim
 RUN apk add --no-cache htop \
  && rm -rf /var/cache/apk/*
 ENTRYPOINT ["htop"]
