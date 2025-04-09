@@ -7,6 +7,7 @@
 #        https://docs.docker.com/engine/reference/run/#example-run-htop-inside-a-container
 #
 #############################
-FROM debian:trixie-slim
-RUN apt install htop \
+FROM alpine:latest
+RUN apk add --no-cache htop \
+ && rm -rf /var/cache/apk/*
 ENTRYPOINT ["htop"]
